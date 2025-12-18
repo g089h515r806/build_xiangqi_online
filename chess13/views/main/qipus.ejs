@@ -1,0 +1,17 @@
+<div>
+  <table>
+		  <thead>
+		    <tr><th>序号</th><th>标题</th><th>步数</th><th>日期</th></tr>
+		  </thead>  
+	<tbody>
+	   <% qipus.forEach(function(qipu, index){ %>
+	     <tr>
+		   <td><%= index + 1 %></td>
+		   <td><a href="/qipu/<%- qipu._id %>"><%- qipu.title %></a></td>
+		   <td><%- qipu.plycount %></td>
+		   <td><%= formatDate(qipu.created, "medium") %></td>
+		 </tr>
+	   <% }); %>
+	</tbody>
+  </table>
+</div>

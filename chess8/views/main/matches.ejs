@@ -1,0 +1,131 @@
+<div>
+    <button id="wsButton" type="button" title="Open WebSocket connection">
+      Open WebSocket connection
+    </button>
+	
+	 <pre id="messages" style="height: 400px; overflow: scroll"></pre>
+	 
+	<div id="tables-wrapper" class="row">
+	  <div class="col-sm-6">
+	    <table style="width:100%;">
+		  <thead>
+		    <th>编号</th><th>玩家</th><th>玩家</th><th>参加</th><th>旁观</th>
+		  </thead>
+		  <tbody id="table-list-body">
+		  </tbody>
+		</table>
+	  </div>
+	  <div class="col-sm-6">
+	  </div>	  
+	</div>
+	 
+	<div id="chess-wrapper" class="row hidden">
+		<div class="col-sm-6">
+
+			<div id="chess-play-wrapper">
+				<canvas id="chessboard"></canvas>
+				<div class="row button-row">
+
+
+					<div class="col-xs-3 col-sm-3"><button type="button" class="btn btn-outline-primary  btn-block" onclick="ready()">准备开始</button></div>
+					<div class="col-xs-3 col-sm-3"><button type="button" class="btn btn-outline-primary  btn-block" onclick="leave()">离开</button></div>
+					<div class="col-xs-3 col-sm-3"><button type="button" class="btn btn-outline-primary  btn-block" onclick="undo()">悔棋</button></div>
+					<div class="col-xs-3 col-sm-3"><button type="button" class="btn btn-outline-primary  btn-block" onclick="resign()">认输</button></div>
+					<div class="col-xs-3 col-sm-3"><button type="button" class="btn btn-outline-primary  btn-block" onclick="draw()">求和</button></div>
+					<div class="col-xs-3 col-sm-3"><button type="button" class="btn btn-outline-primary  btn-block" onclick="quit()">强退</button></div>
+
+
+				</div>
+				<div class="prefab" style="display:none">
+				<canvas id="board_bg" width="450" height="500"></canvas>
+				<canvas id="r_r" width="50" height="50"></canvas>
+				<canvas id="r_n" width="50" height="50"></canvas>
+				<canvas id="r_b" width="50" height="50"></canvas>
+				<canvas id="r_a" width="50" height="50"></canvas>
+				<canvas id="r_k" width="50" height="50"></canvas>
+				<canvas id="r_c" width="50" height="50"></canvas>
+				<canvas id="r_p" width="50" height="50"></canvas>
+
+				<canvas id="b_r" width="50" height="50"></canvas>
+				<canvas id="b_n" width="50" height="50"></canvas>
+				<canvas id="b_b" width="50" height="50"></canvas>
+				<canvas id="b_a" width="50" height="50"></canvas>
+				<canvas id="b_k" width="50" height="50"></canvas>
+				<canvas id="b_c" width="50" height="50"></canvas>
+				<canvas id="b_p" width="50" height="50"></canvas>
+				</div>
+			</div>
+
+
+		 </div> 
+	<div class="col-sm-6"> 
+	
+		<div id="chat-wrapper">
+			  <div class="chat-content">
+				  <ul id="chat-list">
+				  
+				     <li> <span class="chat-user">test2</span>  你好啊</li>
+					 <li> <span class="chat-user">test3</span>  真不错</li>
+				  </ul>
+			  </div>
+			  <div class="actions">
+
+				  <input class="form-control form-text required" type="text" id="edit-message" name="message" />
+				  <button class="btn btn-success" id="chat-send">发送</button>
+			  </div>
+		 </div>	
+	 </div> 
+	 
+	 
+		<div class="modal fade" id="undoModal" tabindex="-1" role="dialog" aria-labelledby="undoModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+							&times;
+						</button>
+						<h4 class="modal-title" id="undoModalLabel">
+							
+						</h4>
+					</div>
+					<div class="modal-body">
+						对手请求悔棋
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal" onclick="refuseUndo()">拒绝
+						</button>
+						<button type="button" class="btn btn-primary" onclick="agreeUndo()">
+							允许
+						</button>
+					</div>
+				</div><!-- /.modal-content -->
+			</div><!-- /.modal -->
+		</div> 
+		
+		<div class="modal fade" id="drawModal" tabindex="-1" role="dialog" aria-labelledby="drawModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+							&times;
+						</button>
+						<h4 class="modal-title" id="withdrawModalLabel">
+							
+						</h4>
+					</div>
+					<div class="modal-body">
+						对手请求和棋
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal" onclick="refuseDraw()">拒绝
+						</button>
+						<button type="button" class="btn btn-primary" onclick="agreeDraw()">
+							允许
+						</button>
+					</div>
+				</div><!-- /.modal-content -->
+			</div><!-- /.modal -->
+		</div> 		
+	 
+  </div> 
+</div>

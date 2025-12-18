@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+
+    <link rel='stylesheet' href='/stylesheets/bootstrap.min.css' />
+	<link rel='stylesheet' href='/stylesheets/style.css' />
+	
+	<%- stylesheets %>
+	
+	
+	<script src="/javascripts/jquery-3.6.3.min.js"></script>
+	<script src="/javascripts/bootstrap.min.js"></script>
+	<script src="/javascripts/jwt-decode.js"></script>
+	
+	
+	
+	
+	
+  </head>
+  <body>
+  
+	<header class="navbar navbar-default">
+	  <div class="header-container container">
+	  <a class="navbar-brand mr-0 mr-md-2" href="/"> 亚艾元象棋</a>
+
+	  <div class="navbar-nav-scroll">
+		<ul class="navbar-nav bd-navbar-nav flex-row">
+
+		  <li class="nav-item">
+			<a class="nav-link" href="/matches" >下棋</a>
+		  </li>
+		  <li class="nav-item">
+			<a class="nav-link" href="/robots" >人机对战</a>
+		  </li>
+	  
+		  <li class="nav-item">
+			<a class="nav-link" href="https://www.xqipu.com/" target="_blank">象棋谱</a>
+		  </li>
+
+		</ul>
+	  </div>
+
+
+
+	  <a class="btn btn-bd-download" href="https://www.xqipu.com/download/">下载</a>
+	  </div>
+	</header>  
+	
+	<div class="main-container container">
+	  <h1 class="page-title"><%- title %></h1>
+	  <div class="main-content">
+	     <%- main_content %>
+	  </div>
+	</div>
+	<div class="footer">
+	  <div class="footer-container container">
+	  <p>技术制作：<a href="https://www.yaiyuan.com/" target="_blank">北京亚艾元软件有限责任公司</a></p>
+      <p>备案序号：<a href="https://beian.miit.gov.cn/" target="_blank">京ICP备13043467号-4</a></p>
+	  </div>
+    </div>
+	<%- scripts %> 
+  </body>
+</html>

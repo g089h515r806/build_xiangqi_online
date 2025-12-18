@@ -1,0 +1,69 @@
+<div id="chess-wrapper" class="row">
+		<div class="col-sm-6">
+
+			<div id="chess-play-wrapper">
+				<canvas id="chessboard"></canvas>
+
+				<div class="row button-row show">
+					<div class="col-xs-4 col-sm-2"><button type="button" class="btn btn-outline-primary  btn-block" id="auto_play" onclick="autoPlay()">自动</button></div>
+					<div class="col-xs-4 col-sm-2"><button type="button" class="btn btn-outline-primary  btn-block" onclick="gotoPrevious()">后退</button></div>
+					<div class="col-xs-4 col-sm-2"><button type="button" class="btn btn-outline-primary  btn-block" onclick="gotoNext()">前进</button></div>
+					<div class="col-xs-4 col-sm-2"><button type="button" class="btn btn-outline-primary  btn-block" onclick="gotoInit()">初始</button></div>
+					<div class="col-xs-4 col-sm-2"><button type="button" class="btn btn-outline-primary  btn-block" onclick="gotoEnd()">终局</button></div>
+					<div class="col-xs-4 col-sm-2"><button type="button" class="btn btn-outline-primary  btn-block" onclick="reverse()">翻转</button></div>
+
+				</div>
+			
+				<div class="prefab" style="display:none">
+				<canvas id="board_bg" width="450" height="500"></canvas>
+				<canvas id="r_r" width="50" height="50"></canvas>
+				<canvas id="r_n" width="50" height="50"></canvas>
+				<canvas id="r_b" width="50" height="50"></canvas>
+				<canvas id="r_a" width="50" height="50"></canvas>
+				<canvas id="r_k" width="50" height="50"></canvas>
+				<canvas id="r_c" width="50" height="50"></canvas>
+				<canvas id="r_p" width="50" height="50"></canvas>
+
+				<canvas id="b_r" width="50" height="50"></canvas>
+				<canvas id="b_n" width="50" height="50"></canvas>
+				<canvas id="b_b" width="50" height="50"></canvas>
+				<canvas id="b_a" width="50" height="50"></canvas>
+				<canvas id="b_k" width="50" height="50"></canvas>
+				<canvas id="b_c" width="50" height="50"></canvas>
+				<canvas id="b_p" width="50" height="50"></canvas>
+				</div>
+			</div>
+
+
+		 </div> 
+	<div class="col-sm-6"> 
+	
+		<div id="qipu-info-wrapper">
+		   <h3>棋谱基本信息</h3>
+			<div class="field field--label-inline">
+				<span class="field--label">红方</span>
+				<span class="field--item"><%- qipu.red %></span>
+			</div>
+			<div class="field field--label-inline">
+				<span class="field--label">黑方</span>
+				<span class="field--item"><%- qipu.black %></span>
+			</div>
+			<div class="field field--label-inline">
+				<span class="field--label">结果</span>
+				<span class="field--item"><%- qipu.result %></span>
+			</div>
+			<div class="field field--label-inline">
+				<span class="field--label">步数</span>
+				<span class="field--item"><%- qipu.plycount %></span>
+			</div>
+			<div class="field field--label-inline">
+				<span class="field--label">时间</span>
+				<span class="field--item"><%- formatDate(qipu.created, "medium") %></span>
+			</div>
+			<div class="field field--label-inline">
+				<span class="field--label">moves</span>
+				<span class="field--item" id="qipu-moves-iccs"><%- qipu.moves %></span>
+			</div>			
+		 </div>	
+	 </div> 
+</div>

@@ -1,0 +1,60 @@
+<div>
+    <button id="wsButton" type="button" title="Open WebSocket connection">
+      Open WebSocket connection
+    </button>
+	
+	 <pre id="messages" style="height: 400px; overflow: scroll"></pre>
+   <div id="chess-wrapper" class="row">
+    <div class="col-sm-6">
+		
+		<div id="chess-play-wrapper">
+			<canvas id="chessboard"></canvas>
+			<div class="row button-row">
+
+				<div class="col-xs-3 col-sm-3"><button type="button" class="btn btn-outline-primary  btn-block" onclick="withdraw()">悔棋</button></div>
+				<div class="col-xs-3 col-sm-3"><button type="button" class="btn btn-outline-primary  btn-block" id="switch_computer" onclick="switchComputer()">不用电脑</button></div>
+				<div class="col-xs-3 col-sm-3"><button type="button" class="btn btn-outline-primary  btn-block" onclick="resetChallenge()">重置</button></div>
+				<div class="col-xs-3 col-sm-3"><button type="button" class="btn btn-outline-primary  btn-block" onclick="reverse()">翻转</button></div>
+
+
+			</div>
+			<div class="prefab" style="display:none">
+			<canvas id="board_bg" width="450" height="500"></canvas>
+			<canvas id="r_r" width="50" height="50"></canvas>
+			<canvas id="r_n" width="50" height="50"></canvas>
+			<canvas id="r_b" width="50" height="50"></canvas>
+			<canvas id="r_a" width="50" height="50"></canvas>
+			<canvas id="r_k" width="50" height="50"></canvas>
+			<canvas id="r_c" width="50" height="50"></canvas>
+			<canvas id="r_p" width="50" height="50"></canvas>
+
+			<canvas id="b_r" width="50" height="50"></canvas>
+			<canvas id="b_n" width="50" height="50"></canvas>
+			<canvas id="b_b" width="50" height="50"></canvas>
+			<canvas id="b_a" width="50" height="50"></canvas>
+			<canvas id="b_k" width="50" height="50"></canvas>
+			<canvas id="b_c" width="50" height="50"></canvas>
+			<canvas id="b_p" width="50" height="50"></canvas>
+			</div>
+		</div>	
+	
+	</div>
+   <div class="col-sm-6"> 
+	
+		<div id="chat-wrapper">
+			  <div class="chat-content">
+				  <ul id="chat-list">
+				  
+				     <li> <span class="chat-user">test2</span>  你好啊</li>
+					 <li> <span class="chat-user">test3</span>  真不错</li>
+				  </ul>
+			  </div>
+			  <div class="actions">
+
+				  <input class="form-control form-text required" type="text" id="edit-message" name="message" />
+				  <button class="btn btn-success" id="chat-send">发送</button>
+			  </div>
+		 </div>	
+	 </div>
+  </div>     
+</div>

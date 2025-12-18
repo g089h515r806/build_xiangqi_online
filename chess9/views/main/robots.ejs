@@ -1,0 +1,95 @@
+<div>
+	<div id="chess-wrapper" class="row">
+		<div class="col-sm-6">
+
+			<div id="chess-play-wrapper">
+				<canvas id="chessboard"></canvas>
+
+				<div class="row button-row show">
+					<div class="col-xs-3 col-sm-3"><button type="button" class="btn btn-outline-primary  btn-block" onclick="undoAction()">悔棋</button></div>
+					<div class="col-xs-3 col-sm-3"><button type="button" class="btn btn-outline-primary  btn-block" onclick="resignAction()">认输</button></div>
+					<div class="col-xs-3 col-sm-3"><button type="button" class="btn btn-outline-primary  btn-block" onclick="readyAction()">重新开始</button></div>
+					<div class="col-xs-3 col-sm-3"><button type="button" class="btn btn-outline-primary  btn-block" onclick="leaveAction()">离开</button></div>			
+
+				</div>
+			
+				<div class="prefab" style="display:none">
+				<canvas id="board_bg" width="450" height="500"></canvas>
+				<canvas id="r_r" width="50" height="50"></canvas>
+				<canvas id="r_n" width="50" height="50"></canvas>
+				<canvas id="r_b" width="50" height="50"></canvas>
+				<canvas id="r_a" width="50" height="50"></canvas>
+				<canvas id="r_k" width="50" height="50"></canvas>
+				<canvas id="r_c" width="50" height="50"></canvas>
+				<canvas id="r_p" width="50" height="50"></canvas>
+
+				<canvas id="b_r" width="50" height="50"></canvas>
+				<canvas id="b_n" width="50" height="50"></canvas>
+				<canvas id="b_b" width="50" height="50"></canvas>
+				<canvas id="b_a" width="50" height="50"></canvas>
+				<canvas id="b_k" width="50" height="50"></canvas>
+				<canvas id="b_c" width="50" height="50"></canvas>
+				<canvas id="b_p" width="50" height="50"></canvas>
+				</div>
+			</div>
+
+
+		 </div> 
+		<div class="col-sm-6"> 
+		
+			<div id="settings-wrapper">
+               <div class="form-group">
+				  <label class="form-label">
+					级别
+				  </label>			   
+				<div class="form-check">
+				  <input class="form-check-input" type="radio" name="level" id="level1" value="1" >
+				  <label class="form-check-label" for="level1">
+					初级棋士
+				  </label>
+				</div>
+				<div class="form-check">
+				  <input class="form-check-input" type="radio" name="level" id="level2" value="2">
+				  <label class="form-check-label" for="level2">
+					中级棋士
+				  </label>
+				</div>
+				<div class="form-check">
+				  <input class="form-check-input" type="radio" name="level" id="level3" value="3" checked>
+				  <label class="form-check-label" for="level3">
+					高级棋士
+				  </label>
+				</div>
+				<div class="form-check">
+				  <input class="form-check-input" type="radio" name="level" id="level4" value="4" >
+				  <label class="form-check-label" for="level4">
+					云棋士
+				  </label>
+				</div>
+               </div>
+			   
+               <div class="form-group">
+				  <label class="form-label">
+					先后手
+				  </label>			   
+				<div class="form-check">
+				  <input class="form-check-input" type="radio" name="isRed" id="isRed1" value="1" checked>
+				  <label class="form-check-label" for="isRed1">
+					电脑执黑
+				  </label>
+				</div>
+				<div class="form-check">
+				  <input class="form-check-input" type="radio" name="isRed" id="isRed0" value="0">
+				  <label class="form-check-label" for="isRed0">
+					电脑执红
+				  </label>
+				</div>
+
+               </div>			   
+
+			 </div>	
+			 
+			 <button type="button" class="btn btn-primary" onclick="saveAndStart()">保存并开始</button>
+		 </div> 
+  </div> 	 
+</div>
